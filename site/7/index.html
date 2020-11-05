@@ -37,8 +37,6 @@
     
     
     
-      <link rel="stylesheet" href="../css/theme.css">
-    
     
       
     
@@ -52,6 +50,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#7" class="md-skip">
+          
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -240,10 +243,59 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7.시각화
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
     
     <a href="./" title="7.시각화" class="md-nav__link md-nav__link--active">
       7.시각화
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    전제조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    정보
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -291,6 +343,52 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    전제조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    정보
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -300,9 +398,59 @@
                   
                 
                 
-                  <h1>7.시각화</h1>
-                
-                
+                <h1 id="7"><strong>7. 시각화</strong><a class="headerlink" href="#7" title="Permanent link">&para;</a></h1>
+<h2 id="_1"><strong>개요</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>K-DaViF를 사용해서 차트를 생성하는 자바스크립트 코드를 반환</li>
+</ul>
+<h2 id="_2"><strong>전제조건</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>색인 데이터 불 필요</li>
+</ul>
+<h2 id="_3"><strong>정보</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>요청 METHOD : GET</li>
+<li>요청 URL : http://[IP:PORT]/konantech/plt.do</li>
+<li>호출 예시 : http://[IP:PORT]/konantech/plt.do?type=bar&amp;width=300&amp;height=300&amp;data=name%2Cvalue%5Cn테스트1%2C60%5Cn테스트2%2C20%5Cn테스트3%2C20</li>
+<li>
+<p>파라미터</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>설명</th>
+<th>필수/선택</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>차트 타입 ("bar","line","pie","scatter" 등)</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>width</td>
+<td>차트의 가로 길이</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>height</td>
+<td>차트의 세로 길이</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>data</td>
+<td>입력 데이터</td>
+<td>필수</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>호출결과</p>
+</li>
+</ul>
+<p><img alt="graph" src="graph.png" /></p>
                 
               
               
@@ -381,8 +529,6 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
-      
-        <script src="../js/theme.js"></script>
       
     
   </body>

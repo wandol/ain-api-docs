@@ -37,8 +37,6 @@
     
     
     
-      <link rel="stylesheet" href="../css/theme.css">
-    
     
       
     
@@ -54,7 +52,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#2" class="md-skip">
           
         </a>
       
@@ -233,6 +231,26 @@
     정보
   </a>
   
+    <nav class="md-nav" aria-label="정보">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 동음이의어
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 다의어
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -382,6 +400,26 @@
     정보
   </a>
   
+    <nav class="md-nav" aria-label="정보">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 동음이의어
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 다의어
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -400,20 +438,21 @@
                   
                 
                 
-                <h1 id="1"><strong>1. 형태소 분석</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+                <h1 id="2"><strong>2. 어휘의미 분석</strong><a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
 <h2 id="_1"><strong>개요</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>입력 된 텍스트에 대한 형태소 분석 결과를 출력한다.(<strong>코난 자체 사전</strong>)</li>
+<li>입력값에 대한 동의어 및 다의어 확장 결과를 출력한다.(<strong>코난 자체 사전</strong>)</li>
 </ul>
 <h2 id="_2"><strong>전제조건</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>색인 데이터 불 필요</li>
 </ul>
 <h2 id="_3"><strong>정보</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 동음이의어<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>요청 METHOD : GET</li>
-<li>요청 URL : http://[IP:PORT]/konantech/kma.do</li>
-<li>호출 예시 : http://[IP:PORT]/konantech/kma.do?text=동해물과백두산이</li>
+<li>요청 URL : http://[IP:PORT]/konantech/hom.do</li>
+<li>호출 예시 : http://[IP:PORT]/konantech/hom.do?kwd=배</li>
 <li>
 <p>파라미터</p>
 <table>
@@ -426,14 +465,9 @@
 </thead>
 <tbody>
 <tr>
-<td>text</td>
+<td>kwd</td>
 <td>입력 데이터</td>
 <td>필수</td>
-</tr>
-<tr>
-<td>volumeNm</td>
-<td>사용자 사전이름(사용자콘솔 확인)</td>
-<td>선택</td>
 </tr>
 </tbody>
 </table>
@@ -443,62 +477,141 @@
 </li>
 </ul>
 <pre><code class="language-json">{
-   &quot;charset&quot;:&quot;UTF8&quot;,
-   &quot;word_count&quot;:1,
-   &quot;language&quot;:&quot;Korean&quot;,
-   &quot;sent_count&quot;:1,
-   &quot;sents&quot;:[
-      {
-         &quot;words&quot;:[
-            {
-               &quot;string&quot;:&quot;동해물과백두산이&quot;,
-               &quot;offset&quot;:0,
-               &quot;nbest&quot;:[
-                  {
-                     &quot;lemmas&quot;:[
-                        {
-                           &quot;string&quot;:&quot;동해&quot;,
-                           &quot;offset&quot;:0,
-                           &quot;length&quot;:6,
-                           &quot;tag&quot;:&quot;NN&quot;,
-                           &quot;tag2&quot;:&quot;NN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;물&quot;,
-                           &quot;offset&quot;:6,
-                           &quot;length&quot;:3,
-                           &quot;tag&quot;:&quot;NN&quot;,
-                           &quot;tag2&quot;:&quot;NN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;과&quot;,
-                           &quot;offset&quot;:9,
-                           &quot;length&quot;:3,
-                           &quot;tag&quot;:&quot;PP&quot;,
-                           &quot;tag2&quot;:&quot;PN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;백두산&quot;,
-                           &quot;offset&quot;:12,
-                           &quot;length&quot;:9,
-                           &quot;tag&quot;:&quot;NN&quot;,
-                           &quot;tag2&quot;:&quot;NN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;이&quot;,
-                           &quot;offset&quot;:21,
-                           &quot;length&quot;:3,
-                           &quot;tag&quot;:&quot;PP&quot;,
-                           &quot;tag2&quot;:&quot;PP&quot;
-                        }
-                     ]
-                  }
-               ]
-            }
-         ]
-      }
-   ],
-   &quot;byte_count&quot;:24
+   &quot;result&quot;:{
+      &quot;total_count&quot;:20,
+      &quot;rows&quot;:[
+         {
+            &quot;sortkey&quot;:[
+
+            ],
+            &quot;location&quot;:{
+               &quot;volume&quot;:&quot;dictionary&quot;,
+               &quot;netaddr&quot;:&quot;127.0.0.1:7577&quot;,
+               &quot;table&quot;:&quot;dictionary&quot;,
+               &quot;rowid&quot;:170210
+            },
+            &quot;fields&quot;:{
+               &quot;homonym_code&quot;:&quot;01&quot;,
+               &quot;word_class&quot;:&quot;명사&quot;,
+               &quot;polysemy_code&quot;:&quot;010001&quot;,
+               &quot;definition&quot;:&quot;사람이나
+동물의 몸에서 위장, 창자, 콩팥 따위의 내장이 들어 있는 곳으로 가슴과 엉덩이 사이의 부위.&quot;,
+               &quot;word&quot;:&quot;배&quot;,
+               &quot;example&quot;:&quot;배가 나오다.\/배에 힘을 주다.\/보기만 해도 배가 부르다.\/점심을 먹지
+못해 배가 많이 고팠다.\/그는 배를 깔고 엎드려 자는 습관이 있다.\/배가 쓰린 것이 술 때문만은 아니라고 생각하며 탁자를 내려다보는 그의 눈은 핏발이 서
+있었다.&quot;
+            },
+            &quot;copyof&quot;:-1
+         },
+         {
+            &quot;sortkey&quot;:[
+
+            ],
+            &quot;location&quot;:{
+               &quot;volume&quot;:&quot;dictionary&quot;,
+               &quot;netaddr&quot;:&quot;127.0.0.1:7577&quot;,
+               &quot;table&quot;:&quot;dictionary&quot;,
+               &quot;rowid&quot;:170211
+            },
+            &quot;fields&quot;:{
+               &quot;homonym_code&quot;:&quot;01&quot;,
+               &quot;word_class&quot;:&quot;명사&quot;,
+               &quot;polysemy_code&quot;:&quot;010002&quot;,
+               &quot;definition&quot;:&quot;절족동물,
+특히 곤충에서 머리와 가슴이 아닌 부분. 여러 마디로 되어 있으며 숨구멍, 항문 따위가
+있다.&quot;,
+               &quot;word&quot;:&quot;배&quot;,
+               &quot;example&quot;:&quot;&quot;
+            },
+            &quot;copyof&quot;:-1
+         }
+      ]
+   },
+   &quot;message&quot;:&quot;&quot;,
+   &quot;status&quot;:&quot;OK&quot;
+}
+</code></pre>
+<h3 id="2_1">2. 다의어<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>요청 METHOD : GET</li>
+<li>요청 URL : http://[IP:PORT]/konantech/mul.do</li>
+<li>호출 예시 : http://[IP:PORT]/konantech/mul.do?kwd=배</li>
+<li>
+<p>파라미터</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>설명</th>
+<th>필수/선택</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kwd</td>
+<td>입력 데이터</td>
+<td>필수</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>호출결과</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+   &quot;result&quot;:{
+      &quot;total_count&quot;:6,
+      &quot;rows&quot;:[
+         {
+            &quot;sortkey&quot;:[
+
+            ],
+            &quot;location&quot;:{
+               &quot;volume&quot;:&quot;dictionary&quot;,
+               &quot;netaddr&quot;:&quot;127.0.0.1:7577&quot;,
+               &quot;table&quot;:&quot;dictionary&quot;,
+               &quot;rowid&quot;:170215
+            },
+            &quot;fields&quot;:{
+               &quot;homonym_code&quot;:&quot;01&quot;,
+               &quot;word_class&quot;:&quot;명사&quot;,
+               &quot;polysemy_code&quot;:&quot;010006&quot;,
+               &quot;definition&quot;:&quot;짐승이 새끼를 낳거나 알을 까는 횟수를 세는 단위.&quot;,
+               &quot;word&quot;:&quot;배&quot;,
+               &quot;example&quot;:&quot;그 돼지는 1년에 두 배나 새끼를 낳았는데, 한 배마다 여러 마리의 새끼를
+         낳았다.&quot;
+            },
+            &quot;copyof&quot;:-1
+         },
+         {
+            &quot;sortkey&quot;:[
+
+            ],
+            &quot;location&quot;:{
+               &quot;volume&quot;:&quot;dictionary&quot;,
+               &quot;netaddr&quot;:&quot;127.0.0.1:7577&quot;,
+               &quot;table&quot;:&quot;dictionary&quot;,
+               &quot;rowid&quot;:170216
+            },
+            &quot;fields&quot;:{
+               &quot;homonym_code&quot;:&quot;02&quot;,
+               &quot;word_class&quot;:&quot;명사&quot;,
+               &quot;polysemy_code&quot;:&quot;020000&quot;,
+               &quot;definition&quot;:&quot;사람이나
+         짐 따위를 싣고 물 위로 떠다니도록 나무나 쇠 따위로 만든 물건. 모양과 쓰임에 따라 보트, 나룻배, 기선(汽船), 군함(軍艦), 화물선, 여객선, 유조선 따위로
+         나눈다.&quot;,
+               &quot;word&quot;:&quot;배&quot;,
+               &quot;example&quot;:&quot;오징어잡이 배.\/배 두 척.\/배를 대다.\/배를 띄우다.\/배를 젓다.\/배를 타다.\/태풍 때문에 배가 뜨지 못했다.\/배 한 척이 바다 한가운데 떠
+         있다.\/그 섬에는 하루에 두 번씩 배가 들어온다.\/베트남 난민들이 지나가는 배 80척에게 구조를 요청했지만 비정하게 외면을 당해 결국 68명이 사망했다고
+         한다.&quot;
+            },
+            &quot;copyof&quot;:-1
+         }
+      ]
+   },
+   &quot;message&quot;:&quot;&quot;,
+   &quot;status&quot;:&quot;OK&quot;
 }
 </code></pre>
                 
@@ -579,8 +692,6 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
-      
-        <script src="../js/theme.js"></script>
       
     
   </body>

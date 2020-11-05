@@ -37,8 +37,6 @@
     
     
     
-      <link rel="stylesheet" href="../css/theme.css">
-    
     
       
     
@@ -52,6 +50,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#9" class="md-skip">
+          
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -264,10 +267,59 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        9.연관어
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
     
     <a href="./" title="9.연관어" class="md-nav__link md-nav__link--active">
       9.연관어
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    전제조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    정보
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -291,6 +343,52 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    전제조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    정보
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -300,9 +398,93 @@
                   
                 
                 
-                  <h1>9.연관어</h1>
-                
-                
+                <h1 id="9"><strong>9. 연관어</strong><a class="headerlink" href="#9" title="Permanent link">&para;</a></h1>
+<h2 id="_1"><strong>개요</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>특정 이슈와 관련된 주요 연관어를 분석한다. "연관어, 출현빈도"를 반환한다.</li>
+</ul>
+<h2 id="_2"><strong>전제조건</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>색인데이터 필요</li>
+</ul>
+<h2 id="_3"><strong>정보</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>요청 METHOD : GET</li>
+<li>요청 URL : http://[IP:PORT]/konantech/relatedword.do</li>
+<li>호출 예시 : http://[IP:PORT]/konantech/relatedword.do?volumeNm=volume1&amp;kwd=프로야구</li>
+<li>
+<p>파라미터</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>설명</th>
+<th>필수/선택</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kwd</td>
+<td>기준 키워드</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>volumeNm</td>
+<td>사용자 사전이름(사용자콘솔 확인)</td>
+<td>필수</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>호출결과</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+   &quot;tma_relatedword(arg_issuefd, arg_issuewd, arg_option, arg_lconf)&quot;:[
+      {
+         &quot;string&quot;:&quot;dna&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;imf&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;kbo&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;kbo리그&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;kia&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;mvp&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;sbs&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;test&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;txt&quot;,
+         &quot;count&quot;:1
+      },
+      {
+         &quot;string&quot;:&quot;거짓말&quot;,
+         &quot;count&quot;:1
+      }
+   ]
+}
+</code></pre>
                 
               
               
@@ -381,8 +563,6 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
-      
-        <script src="../js/theme.js"></script>
       
     
   </body>
