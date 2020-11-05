@@ -37,8 +37,6 @@
     
     
     
-      <link rel="stylesheet" href="../css/theme.css">
-    
     
       
     
@@ -52,6 +50,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#5" class="md-skip">
+          
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -216,10 +219,66 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5.의미역 인식
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
     
     <a href="./" title="5.의미역 인식" class="md-nav__link md-nav__link--active">
       5.의미역 인식
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    전제조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    정보
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    참고자료
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -291,6 +350,59 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    전제조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    정보
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    참고자료
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -300,9 +412,173 @@
                   
                 
                 
-                  <h1>5.의미역 인식</h1>
-                
-                
+                <h1 id="5"><strong>5. 의미역 인식</strong><a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<h2 id="_1"><strong>개요</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>문장에서 어절 간의 수식관계 분석을 통한 문장의 의미 파악 기능 </li>
+</ul>
+<h2 id="_2"><strong>전제조건</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>색인 데이터 불 필요</li>
+</ul>
+<h2 id="_3"><strong>정보</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>요청 METHOD : GET</li>
+<li>요청 URL : http://[IP:PORT]/konantech/srl.do</li>
+<li>호출 예시 : http://[IP:PORT]/konantech/srl.do?model_name=m&amp;sentence=철수가영희에게책을선물하다</li>
+<li>
+<p>파라미터</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>설명</th>
+<th>필수/선택</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sentence</td>
+<td>입력 데이터</td>
+<td>필수</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>호출결과</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+   &quot;result&quot;:[
+      {
+         &quot;offset&quot;:0,
+         &quot;tag&quot;:&quot;ARG0&quot;,
+         &quot;length&quot;:6,
+         &quot;string&quot;:&quot;철수&quot;
+      },
+      {
+         &quot;offset&quot;:10,
+         &quot;tag&quot;:&quot;ARG3&quot;,
+         &quot;length&quot;:6,
+         &quot;string&quot;:&quot;영희&quot;
+      },
+      {
+         &quot;offset&quot;:23,
+         &quot;tag&quot;:&quot;ARG1&quot;,
+         &quot;length&quot;:3,
+         &quot;string&quot;:&quot;책&quot;
+      }
+   ]
+}
+</code></pre>
+<h2 id="_4"><strong>참고자료</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>의미역</th>
+<th>의미</th>
+<th>정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARG0</td>
+<td>행위주</td>
+<td>용언을 행하는 것, 느끼는 대상, 경험하는 대상…</td>
+</tr>
+<tr>
+<td>ARG1</td>
+<td>피동작주</td>
+<td>용언을 함께하는 대상</td>
+</tr>
+<tr>
+<td>ARG2</td>
+<td>출발점</td>
+<td>용언의 시작점</td>
+</tr>
+<tr>
+<td>ARG3</td>
+<td>도착점</td>
+<td>용언이 행해진 결과 및 도착점</td>
+</tr>
+<tr>
+<td>ARGM-CAU</td>
+<td>원인</td>
+<td>용언이 일어난 원인</td>
+</tr>
+<tr>
+<td>ARGM-CND</td>
+<td>상태</td>
+<td>용언이 일어나는 상태</td>
+</tr>
+<tr>
+<td>ARGM-DIR</td>
+<td>방향</td>
+<td>용언이 행해지는 방향</td>
+</tr>
+<tr>
+<td>ARGM-DIS</td>
+<td>내용</td>
+<td>어떠한 것을 설명할 때</td>
+</tr>
+<tr>
+<td>ARGM-INS</td>
+<td>도구</td>
+<td>용언을 행할 때 사용된 도구</td>
+</tr>
+<tr>
+<td>ARGM-LOC</td>
+<td>장소</td>
+<td>용언이 행해지는 장소</td>
+</tr>
+<tr>
+<td>ARGM-MNR</td>
+<td>태도</td>
+<td>용언을 행하는 태도</td>
+</tr>
+<tr>
+<td>ARGM-NEG</td>
+<td>부정의미</td>
+<td>용언에 대한 부정적 부사</td>
+</tr>
+<tr>
+<td>ARGM-PRD</td>
+<td>단어</td>
+<td>용언을 수식하는 단어나 구</td>
+</tr>
+<tr>
+<td>ARGM-PRP</td>
+<td>시제</td>
+<td>용언이 행해지는 시제</td>
+</tr>
+<tr>
+<td>ARGM-TMP</td>
+<td>목적</td>
+<td>용언을 행하는 목표</td>
+</tr>
+<tr>
+<td>ARGM-ADV</td>
+<td>영향주</td>
+<td>용언이 행해지는데 영향을 주는 것</td>
+</tr>
+<tr>
+<td>ARGM-EXT</td>
+<td>기준치</td>
+<td>용언이 행해지는 것에 대한 기준</td>
+</tr>
+<tr>
+<td>ARGM-PRP</td>
+<td>목적</td>
+<td>용언을 행하는 목표</td>
+</tr>
+<tr>
+<td>ARGM-PRP</td>
+<td>목적</td>
+<td>용언을 행하는 목표</td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -381,8 +657,6 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
-      
-        <script src="../js/theme.js"></script>
       
     
   </body>

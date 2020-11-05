@@ -37,8 +37,6 @@
     
     
     
-      <link rel="stylesheet" href="../css/theme.css">
-    
     
       
     
@@ -54,7 +52,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#3" class="md-skip">
           
         </a>
       
@@ -400,10 +398,10 @@
                   
                 
                 
-                <h1 id="1"><strong>1. 형태소 분석</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+                <h1 id="3"><strong>3. 개체명 인식</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
 <h2 id="_1"><strong>개요</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>입력 된 텍스트에 대한 형태소 분석 결과를 출력한다.(<strong>코난 자체 사전</strong>)</li>
+<li>인물, 기관, 지명 등의 개체명을 추출한다.</li>
 </ul>
 <h2 id="_2"><strong>전제조건</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -412,8 +410,8 @@
 <h2 id="_3"><strong>정보</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>요청 METHOD : GET</li>
-<li>요청 URL : http://[IP:PORT]/konantech/kma.do</li>
-<li>호출 예시 : http://[IP:PORT]/konantech/kma.do?text=동해물과백두산이</li>
+<li>요청 URL : http://[IP:PORT]/konantech/ner.do</li>
+<li>호출 예시 : http://[IP:PORT]/konantech/ner.do?text=이효리는 제주도에 산다&amp;volumeNm=volume1</li>
 <li>
 <p>파라미터</p>
 <table>
@@ -443,62 +441,34 @@
 </li>
 </ul>
 <pre><code class="language-json">{
-   &quot;charset&quot;:&quot;UTF8&quot;,
-   &quot;word_count&quot;:1,
-   &quot;language&quot;:&quot;Korean&quot;,
-   &quot;sent_count&quot;:1,
-   &quot;sents&quot;:[
+   &quot;result&quot;:[
       {
-         &quot;words&quot;:[
+         &quot;string&quot;:&quot;이효리&quot;,
+         &quot;tag&quot;:&quot;PER&quot;,
+         &quot;location&quot;:[
             {
-               &quot;string&quot;:&quot;동해물과백두산이&quot;,
-               &quot;offset&quot;:0,
-               &quot;nbest&quot;:[
-                  {
-                     &quot;lemmas&quot;:[
-                        {
-                           &quot;string&quot;:&quot;동해&quot;,
-                           &quot;offset&quot;:0,
-                           &quot;length&quot;:6,
-                           &quot;tag&quot;:&quot;NN&quot;,
-                           &quot;tag2&quot;:&quot;NN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;물&quot;,
-                           &quot;offset&quot;:6,
-                           &quot;length&quot;:3,
-                           &quot;tag&quot;:&quot;NN&quot;,
-                           &quot;tag2&quot;:&quot;NN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;과&quot;,
-                           &quot;offset&quot;:9,
-                           &quot;length&quot;:3,
-                           &quot;tag&quot;:&quot;PP&quot;,
-                           &quot;tag2&quot;:&quot;PN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;백두산&quot;,
-                           &quot;offset&quot;:12,
-                           &quot;length&quot;:9,
-                           &quot;tag&quot;:&quot;NN&quot;,
-                           &quot;tag2&quot;:&quot;NN&quot;
-                        },
-                        {
-                           &quot;string&quot;:&quot;이&quot;,
-                           &quot;offset&quot;:21,
-                           &quot;length&quot;:3,
-                           &quot;tag&quot;:&quot;PP&quot;,
-                           &quot;tag2&quot;:&quot;PP&quot;
-                        }
-                     ]
-                  }
-               ]
+               &quot;sent_no&quot;:0,
+               &quot;length&quot;:9,
+               &quot;offset&quot;:0
+            }
+         ]
+      },
+      {
+         &quot;string&quot;:&quot;제주도&quot;,
+         &quot;tag&quot;:&quot;LOC&quot;,
+         &quot;location&quot;:[
+            {
+               &quot;sent_no&quot;:0,
+               &quot;length&quot;:9,
+               &quot;offset&quot;:13
             }
          ]
       }
    ],
-   &quot;byte_count&quot;:24
+   &quot;language&quot;:&quot;Korean&quot;,
+   &quot;charset&quot;:&quot;UTF-8&quot;,
+   &quot;byte_count&quot;:32,
+   &quot;term_count&quot;:2
 }
 </code></pre>
                 
@@ -579,8 +549,6 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
-      
-        <script src="../js/theme.js"></script>
       
     
   </body>
