@@ -19,6 +19,9 @@ theme:
   language: 'kr'
 
 markdown_extensions:
+  - attr_list
+  
+markdown_extensions:
   - admonition
   - codehilite:
       css_class: code
