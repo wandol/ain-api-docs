@@ -1,3 +1,33 @@
-site_name: 홈
+site_name: 자연어 처리
+site_description: '자연어처리 API 가이드'
+site_author: 'konantech wanseok.park'
+nav:
+    - Home: index.md
+    - 1.형태소 분석: 1.md
+    - 2.어휘의미 분석: 2.md
+    - 3.개체명 인식: 3.md
+    - 4.의존 구문분석: 4.md
+    - 5.의미역 인식: 5.md
+    - 6.정보검색: 6.md
+    - 7.시각화: 7.md
+    - 8.이슈어: 8.md
+    - 9.연관어: 9.md
+    - 10.감성분석: 10.md
+
 theme:
-  name: readthedocs
+  name: 'material'
+  language: 'kr'
+
+extra_css:
+  - 'css/theme.css'
+extra_javascript:
+  - js/theme.js
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      css_class: code
+      use_pygments: false
+      guess_lang: false
+  - toc:
+      permalink: true
